@@ -21,10 +21,10 @@ jobs:
       id: vars
       run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10}
     - name: Build the tagged Docker image
-      run: docker build --tag docker.pkg.github.com/k1m0ch1/covid-19-api/gobot-covid:${{steps.vars.outputs.tag}} -f src/gobot-covid/Dockerfile src/gobot-covid/.
+      run: docker build --tag docker.pkg.github.com/im-o/covid-19-api/gobot-covid:${{steps.vars.outputs.tag}} -f src/gobot-covid/Dockerfile src/gobot-covid/.
     - name: Push the tagged Docker image
-      run: docker push docker.pkg.github.com/k1m0ch1/covid-19-api/gobot-covid:${{steps.vars.outputs.tag}}
+      run: docker push docker.pkg.github.com/im-o/covid-19-api/gobot-covid:${{steps.vars.outputs.tag}}
     - name: Build the latest Docker image
-      run: docker build --tag docker.pkg.github.com/k1m0ch1/covid-19-api/gobot-covid:latest -f src/gobot-covid/Dockerfile src/gobot-covid/.
+      run: docker build --tag docker.pkg.github.com/im-o/covid-19-api/gobot-covid:latest -f src/gobot-covid/Dockerfile src/gobot-covid/.
     - name: Push the latest Docker image
-      run: docker push docker.pkg.github.com/k1m0ch1/covid-19-api/gobot-covid:latest
+      run: docker push docker.pkg.github.com/im-o/covid-19-api/gobot-covid:latest
